@@ -1,0 +1,37 @@
+{
+    "name": "aws-dsql-demo",
+    "version": "1.0.0",
+    "author": "railalex",
+    "dependencies": {
+        "@aws-sdk/dsql-signer": "^3.826.0",
+        "@aws-sdk/lib-dynamodb": "^3.738.0",
+        "@enter-at/lambda-handlers": "^4.0.0",
+        "aws-cdk": "^2.145.0",
+        "aws-cdk-lib": "^2.145.0",
+        "aws-lambda": "^1.0.7",
+        "constructs": "^10.3.0",
+        "esbuild": "^0.21.5",
+        "pg": "^8.16.0",
+        "reflect-metadata": "^0.2.2",
+        "typeorm": "^0.3.24",
+        "typescript-eslint": "^7.13.0"
+    },
+    "scripts": {
+        "lint": "eslint 'service/**/*.{ts,jsx}'",
+        "infra:deploy": "cdk list && cdk deploy",
+        "infra:bootstrap": "cdk bootstrap",
+        "local-deploy": "cdklocal deploy --all",
+        "local-synth": "cdklocal synth",
+        "local-bootstrap": "cdklocal bootstrap"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.0",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
+        "datadog-cdk-constructs-v2": "^1.13.0",
+        "eslint": "^8.56.0",
+        "globals": "^15.4.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.5"
+    }
+}

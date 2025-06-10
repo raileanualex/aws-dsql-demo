@@ -1,0 +1,743 @@
+{
+ "Resources": {
+  "APIGateway71B6BBE0": {
+   "Type": "AWS::ApiGateway::RestApi",
+   "Properties": {
+    "ApiKeySourceType": "HEADER",
+    "Description": "This service serves the API for Word Vortex.",
+    "Name": "WordVertexAPI"
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Resource"
+   }
+  },
+  "APIGatewayCloudWatchRole4835D6D9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "apigateway.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+       ]
+      ]
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/CloudWatchRole/Resource"
+   }
+  },
+  "APIGatewayAccount871F0E99": {
+   "Type": "AWS::ApiGateway::Account",
+   "Properties": {
+    "CloudWatchRoleArn": {
+     "Fn::GetAtt": [
+      "APIGatewayCloudWatchRole4835D6D9",
+      "Arn"
+     ]
+    }
+   },
+   "DependsOn": [
+    "APIGateway71B6BBE0"
+   ],
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Account"
+   }
+  },
+  "APIGatewayDeploymentF0E5ED0A22f1d70e46aef0d6136db1b7e6f5411f": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "Description": "This service serves the API for Word Vortex.",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "DependsOn": [
+    "APIGatewayOPTIONSBC809E56",
+    "APIGatewayv1generategamePOSTA7F3AC01",
+    "APIGatewayv1generategameCBDFF340",
+    "APIGatewayv1getallscoresGET6E19BDCD",
+    "APIGatewayv1getallscores92A29796",
+    "APIGatewayv1getcurrentscoreGET31E7766D",
+    "APIGatewayv1getcurrentscore533829A3",
+    "APIGatewayv1FC7408DC",
+    "APIGatewayv1validatewordPOST68D0A3DA",
+    "APIGatewayv1validateword2B9B2E9A"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Deployment/Resource"
+   }
+  },
+  "APIGatewayDeploymentStageprod9BCCD7C3": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "DeploymentId": {
+     "Ref": "APIGatewayDeploymentF0E5ED0A22f1d70e46aef0d6136db1b7e6f5411f"
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    },
+    "StageName": "prod"
+   },
+   "DependsOn": [
+    "APIGatewayAccount871F0E99"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/DeploymentStage.prod/Resource"
+   }
+  },
+  "APIGatewayv1FC7408DC": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Fn::GetAtt": [
+      "APIGateway71B6BBE0",
+      "RootResourceId"
+     ]
+    },
+    "PathPart": "v1",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/Resource"
+   }
+  },
+  "APIGatewayv1generategameCBDFF340": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "APIGatewayv1FC7408DC"
+    },
+    "PathPart": "generate-game",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/Resource"
+   }
+  },
+  "APIGatewayv1generategamePOSTApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1generategame7143378D": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/",
+       {
+        "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+       },
+       "/POST/v1/generate-game"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game"
+   }
+  },
+  "APIGatewayv1generategamePOSTApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1generategame6780A359": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/test-invoke-stage/POST/v1/generate-game"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game"
+   }
+  },
+  "APIGatewayv1generategamePOSTA7F3AC01": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": true,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "POST",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "APIGatewayv1generategameCBDFF340"
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/Resource"
+   }
+  },
+  "APIGatewayv1validateword2B9B2E9A": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "APIGatewayv1FC7408DC"
+    },
+    "PathPart": "validate-word",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/Resource"
+   }
+  },
+  "APIGatewayv1validatewordPOSTApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1validatewordBD124F7C": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/",
+       {
+        "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+       },
+       "/POST/v1/validate-word"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word"
+   }
+  },
+  "APIGatewayv1validatewordPOSTApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1validateword802D83DB": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/test-invoke-stage/POST/v1/validate-word"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word"
+   }
+  },
+  "APIGatewayv1validatewordPOST68D0A3DA": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": true,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "POST",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "APIGatewayv1validateword2B9B2E9A"
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/Resource"
+   }
+  },
+  "APIGatewayv1getcurrentscore533829A3": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "APIGatewayv1FC7408DC"
+    },
+    "PathPart": "get-current-score",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/Resource"
+   }
+  },
+  "APIGatewayv1getcurrentscoreGETApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getcurrentscore4E6BA8EE": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/",
+       {
+        "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+       },
+       "/GET/v1/get-current-score"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score"
+   }
+  },
+  "APIGatewayv1getcurrentscoreGETApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getcurrentscoreDEF02728": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/test-invoke-stage/GET/v1/get-current-score"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score"
+   }
+  },
+  "APIGatewayv1getcurrentscoreGET31E7766D": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": true,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "APIGatewayv1getcurrentscore533829A3"
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/Resource"
+   }
+  },
+  "APIGatewayv1getallscores92A29796": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "APIGatewayv1FC7408DC"
+    },
+    "PathPart": "get-all-scores",
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/Resource"
+   }
+  },
+  "APIGatewayv1getallscoresGETApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getallscores2D270569": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/",
+       {
+        "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+       },
+       "/GET/v1/get-all-scores"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores"
+   }
+  },
+  "APIGatewayv1getallscoresGETApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getallscores0B8BB191": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":execute-api:us-east-1:000000000000:",
+       {
+        "Ref": "APIGateway71B6BBE0"
+       },
+       "/test-invoke-stage/GET/v1/get-all-scores"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores"
+   }
+  },
+  "APIGatewayv1getallscoresGET6E19BDCD": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": true,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "APIGatewayv1getallscores92A29796"
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/Resource"
+   }
+  },
+  "APIGatewayOPTIONSBC809E56": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "APIGateway71B6BBE0",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "APIGateway71B6BBE0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/OPTIONS/Resource"
+   }
+  },
+  "ApiKeyF9DDEE66": {
+   "Type": "AWS::ApiGateway::ApiKey",
+   "Properties": {
+    "Enabled": true
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/ApiKey/Resource"
+   }
+  },
+  "UsagePlanC18B28F1": {
+   "Type": "AWS::ApiGateway::UsagePlan",
+   "Properties": {
+    "ApiStages": [
+     {
+      "ApiId": {
+       "Ref": "APIGateway71B6BBE0"
+      },
+      "Stage": {
+       "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+      },
+      "Throttle": {}
+     }
+    ],
+    "UsagePlanName": "Usage Plan"
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/Resource"
+   }
+  },
+  "UsagePlanUsagePlanKeyResourceFB108041": {
+   "Type": "AWS::ApiGateway::UsagePlanKey",
+   "Properties": {
+    "KeyId": {
+     "Ref": "ApiKeyF9DDEE66"
+    },
+    "KeyType": "API_KEY",
+    "UsagePlanId": {
+     "Ref": "UsagePlanC18B28F1"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/UsagePlanKeyResource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/22PzYrCQBCEn8X7pHWzgnjU9bYsK4pnaSetts5PyEyUEPLudhzBLOypvypmqqtz+JjOIB/hPWS6uGaGD9BuI+qrEmvfYsknjHTHBtoNhbgoWX0d3QAXWvvaRbWi0vjGkqC4AyVpJ+q9BPLV15WmJYa3eGUm/qF49kVvvUg2fVPzXJZoFyRpbdD13v9CnnWK0Uptb1K+zE4ZtIcCQfSaKsshsHfdnx6/dSzrOGzUKecLgksY3/JPmMNkdAnMWSVnsyXYpPkASh2XOEsBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "APIGatewayEndpoint038C57B1": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "APIGateway71B6BBE0"
+      },
+      ".execute-api.us-east-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+      },
+      "/"
+     ]
+    ]
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
