@@ -4,6 +4,7 @@ import { generateRandomGame } from "../shared/utils/GameGenerator";
 
 
 export async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
+    console.log(event, context);
     await DatabaseService.initialize();
 
     try {
