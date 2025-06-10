@@ -30,11 +30,12 @@ This repository demonstrates how to build a serverless application using Amazon 
 │   │   └── RestAPIStack.ts
 │   └── main.ts            # CDK app entry point
 ├── service/               # Lambda function code
-│   └── generate-game/     # Game generator service
-│       ├── DatabaseService.ts
-│       ├── Game.ts
-│       ├── GameGenerator.ts
-│       └── Handler.ts
+│   ├── generate-game/     # Game generator service
+│   │   └── Handler.ts     # Lambda handler
+│   └── shared/           # Shared code across services
+│       ├── models/       # Shared data models
+│       ├── services/     # Common services
+│       └── utils/        # Utility functions
 └── package.json
 ```
 
