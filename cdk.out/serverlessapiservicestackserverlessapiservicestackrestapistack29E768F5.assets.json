@@ -1,0 +1,20 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "9365b3de2eb93b2266696acea3757109f4a6eeebd0dd6c7a97607cce2a498011": {
+      "source": {
+        "path": "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "000000000000-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-000000000000-us-east-1",
+          "objectKey": "9365b3de2eb93b2266696acea3757109f4a6eeebd0dd6c7a97607cce2a498011.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-file-publishing-role-000000000000-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

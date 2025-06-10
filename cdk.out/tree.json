@@ -1,0 +1,1995 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "serverless-api-service-stack": {
+        "id": "serverless-api-service-stack",
+        "path": "serverless-api-service-stack",
+        "children": {
+          "serverless-api-service-stack": {
+            "id": "serverless-api-service-stack",
+            "path": "serverless-api-service-stack/serverless-api-service-stack",
+            "children": {
+              "GamesTable": {
+                "id": "GamesTable",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/GamesTable",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/GamesTable/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        },
+                        "tableName": "GamesTable"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/GamesTable/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.147.2"
+                }
+              },
+              "UsersTable": {
+                "id": "UsersTable",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/UsersTable",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/UsersTable/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                      "aws:cdk:cloudformation:props": {
+                        "attributeDefinitions": [
+                          {
+                            "attributeName": "id",
+                            "attributeType": "S"
+                          }
+                        ],
+                        "keySchema": [
+                          {
+                            "attributeName": "id",
+                            "keyType": "HASH"
+                          }
+                        ],
+                        "provisionedThroughput": {
+                          "readCapacityUnits": 5,
+                          "writeCapacityUnits": 5
+                        },
+                        "tableName": "UsersTable"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_dynamodb.CfnTable",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "ScalingRole": {
+                    "id": "ScalingRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/UsersTable/ScalingRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+                  "version": "2.147.2"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/Exports",
+                "children": {
+                  "Output{\"Fn::GetAtt\":[\"GamesTableB32AB610\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"GamesTableB32AB610\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/Exports/Output{\"Fn::GetAtt\":[\"GamesTableB32AB610\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Output{\"Fn::GetAtt\":[\"UsersTable9725E9C8\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"UsersTable9725E9C8\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack/Exports/Output{\"Fn::GetAtt\":[\"UsersTable9725E9C8\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "BootstrapVersion": {
+                "id": "BootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/BootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.147.2"
+                }
+              },
+              "CheckBootstrapVersion": {
+                "id": "CheckBootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack/CheckBootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnRule",
+                  "version": "2.147.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Stack",
+              "version": "2.147.2"
+            }
+          },
+          "serverless-api-service-stack-functions-stack": {
+            "id": "serverless-api-service-stack-functions-stack",
+            "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack",
+            "children": {
+              "GenerateGameLambda": {
+                "id": "GenerateGameLambda",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+                                        },
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "GenerateGameLambdaServiceRoleDefaultPolicyCF49D8D7",
+                                "roles": [
+                                  {
+                                    "Ref": "GenerateGameLambdaServiceRole30FF3608"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+                          "s3Key": "d97e6dc64eb512e8169fb96a1a6b829bac7a3cd47f49d84524bf19545e6c7c5d.zip"
+                        },
+                        "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GenerateGameLambdaServiceRole30FF3608",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs20.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.147.2"
+                }
+              },
+              "ValidateWordLambda": {
+                "id": "ValidateWordLambda",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+                                        },
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ValidateWordLambdaServiceRoleDefaultPolicyBBAB304E",
+                                "roles": [
+                                  {
+                                    "Ref": "ValidateWordLambdaServiceRole0615BF92"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+                          "s3Key": "b6de3cccba5263aa24b273878e34dfd2c1b44d9780df93343e43e71612a88580.zip"
+                        },
+                        "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "ValidateWordLambdaServiceRole0615BF92",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs20.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.147.2"
+                }
+              },
+              "GetCurrentScoreLambda": {
+                "id": "GetCurrentScoreLambda",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+                                        },
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "GetCurrentScoreLambdaServiceRoleDefaultPolicy1D110C92",
+                                "roles": [
+                                  {
+                                    "Ref": "GetCurrentScoreLambdaServiceRole1EB05148"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+                          "s3Key": "1e7c3890fb06044dbac974b80a2617665ec1c6e970065b7192206a9c75fcab0f.zip"
+                        },
+                        "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GetCurrentScoreLambdaServiceRole1EB05148",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs20.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.147.2"
+                }
+              },
+              "GetAllScoresLambda": {
+                "id": "GetAllScoresLambda",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole",
+                    "children": {
+                      "ImportServiceRole": {
+                        "id": "ImportServiceRole",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/ImportServiceRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "lambda.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "dynamodb:*",
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+                                        },
+                                        {
+                                          "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "GetAllScoresLambdaServiceRoleDefaultPolicyA90E4576",
+                                "roles": [
+                                  {
+                                    "Ref": "GetAllScoresLambdaServiceRole5E66F1F7"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Code": {
+                    "id": "Code",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+                          "s3Key": "27312d2739da8dc105db0cab5b1727546d5f5c68a7c9b3b5ff8dc43e01a166e5.zip"
+                        },
+                        "handler": "index.handler",
+                        "role": {
+                          "Fn::GetAtt": [
+                            "GetAllScoresLambdaServiceRole5E66F1F7",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs20.x"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.147.2"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "Exports": {
+                "id": "Exports",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports",
+                "children": {
+                  "Output{\"Fn::GetAtt\":[\"GenerateGameLambdaB5A48AB4\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"GenerateGameLambdaB5A48AB4\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GenerateGameLambdaB5A48AB4\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Output{\"Fn::GetAtt\":[\"ValidateWordLambda786BB569\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"ValidateWordLambda786BB569\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"ValidateWordLambda786BB569\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Output{\"Fn::GetAtt\":[\"GetCurrentScoreLambdaAD50EAD6\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"GetCurrentScoreLambdaAD50EAD6\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GetCurrentScoreLambdaAD50EAD6\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Output{\"Fn::GetAtt\":[\"GetAllScoresLambda50102433\",\"Arn\"]}": {
+                    "id": "Output{\"Fn::GetAtt\":[\"GetAllScoresLambda50102433\",\"Arn\"]}",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GetAllScoresLambda50102433\",\"Arn\"]}",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "BootstrapVersion": {
+                "id": "BootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/BootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.147.2"
+                }
+              },
+              "CheckBootstrapVersion": {
+                "id": "CheckBootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/CheckBootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnRule",
+                  "version": "2.147.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Stack",
+              "version": "2.147.2"
+            }
+          },
+          "serverless-api-service-stack-rest-api-stack": {
+            "id": "serverless-api-service-stack-rest-api-stack",
+            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack",
+            "children": {
+              "APIGateway": {
+                "id": "APIGateway",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                      "aws:cdk:cloudformation:props": {
+                        "apiKeySourceType": "HEADER",
+                        "description": "This service serves the API for Word Vortex.",
+                        "name": "WordVertexAPI"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnRestApi",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "CloudWatchRole": {
+                    "id": "CloudWatchRole",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/CloudWatchRole",
+                    "children": {
+                      "ImportCloudWatchRole": {
+                        "id": "ImportCloudWatchRole",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/CloudWatchRole/ImportCloudWatchRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/CloudWatchRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "apigateway.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                                  ]
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Account": {
+                    "id": "Account",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Account",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                      "aws:cdk:cloudformation:props": {
+                        "cloudWatchRoleArn": {
+                          "Fn::GetAtt": [
+                            "APIGatewayCloudWatchRole4835D6D9",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnAccount",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Deployment": {
+                    "id": "Deployment",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Deployment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Deployment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                          "aws:cdk:cloudformation:props": {
+                            "description": "This service serves the API for Word Vortex.",
+                            "restApiId": {
+                              "Ref": "APIGateway71B6BBE0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "DeploymentStage.prod": {
+                    "id": "DeploymentStage.prod",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/DeploymentStage.prod",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/DeploymentStage.prod/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                          "aws:cdk:cloudformation:props": {
+                            "deploymentId": {
+                              "Ref": "APIGatewayDeploymentF0E5ED0A22f1d70e46aef0d6136db1b7e6f5411f"
+                            },
+                            "restApiId": {
+                              "Ref": "APIGateway71B6BBE0"
+                            },
+                            "stageName": "prod"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Stage",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Endpoint": {
+                    "id": "Endpoint",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Endpoint",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "Default": {
+                    "id": "Default",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default",
+                    "children": {
+                      "v1": {
+                        "id": "v1",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Fn::GetAtt": [
+                                    "APIGateway71B6BBE0",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "pathPart": "v1",
+                                "restApiId": {
+                                  "Ref": "APIGateway71B6BBE0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                              "version": "2.147.2"
+                            }
+                          },
+                          "generate-game": {
+                            "id": "generate-game",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                                  "aws:cdk:cloudformation:props": {
+                                    "parentId": {
+                                      "Ref": "APIGatewayv1FC7408DC"
+                                    },
+                                    "pathPart": "generate-game",
+                                    "restApiId": {
+                                      "Ref": "APIGateway71B6BBE0"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                                  "version": "2.147.2"
+                                }
+                              },
+                              "POST": {
+                                "id": "POST",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST",
+                                "children": {
+                                  "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game": {
+                                    "id": "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/",
+                                              {
+                                                "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+                                              },
+                                              "/POST/v1/generate-game"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game": {
+                                    "id": "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/test-invoke-stage/POST/v1/generate-game"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "Resource": {
+                                    "id": "Resource",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/Resource",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                      "aws:cdk:cloudformation:props": {
+                                        "apiKeyRequired": true,
+                                        "authorizationType": "NONE",
+                                        "httpMethod": "POST",
+                                        "integration": {
+                                          "type": "AWS_PROXY",
+                                          "uri": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                                {
+                                                  "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+                                                },
+                                                "/invocations"
+                                              ]
+                                            ]
+                                          },
+                                          "integrationHttpMethod": "POST"
+                                        },
+                                        "resourceId": {
+                                          "Ref": "APIGatewayv1generategameCBDFF340"
+                                        },
+                                        "restApiId": {
+                                          "Ref": "APIGateway71B6BBE0"
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                      "version": "2.147.2"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                                  "version": "2.147.2"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                              "version": "2.147.2"
+                            }
+                          },
+                          "validate-word": {
+                            "id": "validate-word",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                                  "aws:cdk:cloudformation:props": {
+                                    "parentId": {
+                                      "Ref": "APIGatewayv1FC7408DC"
+                                    },
+                                    "pathPart": "validate-word",
+                                    "restApiId": {
+                                      "Ref": "APIGateway71B6BBE0"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                                  "version": "2.147.2"
+                                }
+                              },
+                              "POST": {
+                                "id": "POST",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST",
+                                "children": {
+                                  "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word": {
+                                    "id": "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/",
+                                              {
+                                                "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+                                              },
+                                              "/POST/v1/validate-word"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word": {
+                                    "id": "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/test-invoke-stage/POST/v1/validate-word"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "Resource": {
+                                    "id": "Resource",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/Resource",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                      "aws:cdk:cloudformation:props": {
+                                        "apiKeyRequired": true,
+                                        "authorizationType": "NONE",
+                                        "httpMethod": "POST",
+                                        "integration": {
+                                          "type": "AWS_PROXY",
+                                          "uri": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                                {
+                                                  "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+                                                },
+                                                "/invocations"
+                                              ]
+                                            ]
+                                          },
+                                          "integrationHttpMethod": "POST"
+                                        },
+                                        "resourceId": {
+                                          "Ref": "APIGatewayv1validateword2B9B2E9A"
+                                        },
+                                        "restApiId": {
+                                          "Ref": "APIGateway71B6BBE0"
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                      "version": "2.147.2"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                                  "version": "2.147.2"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                              "version": "2.147.2"
+                            }
+                          },
+                          "get-current-score": {
+                            "id": "get-current-score",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                                  "aws:cdk:cloudformation:props": {
+                                    "parentId": {
+                                      "Ref": "APIGatewayv1FC7408DC"
+                                    },
+                                    "pathPart": "get-current-score",
+                                    "restApiId": {
+                                      "Ref": "APIGateway71B6BBE0"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                                  "version": "2.147.2"
+                                }
+                              },
+                              "GET": {
+                                "id": "GET",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET",
+                                "children": {
+                                  "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score": {
+                                    "id": "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/",
+                                              {
+                                                "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+                                              },
+                                              "/GET/v1/get-current-score"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score": {
+                                    "id": "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/test-invoke-stage/GET/v1/get-current-score"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "Resource": {
+                                    "id": "Resource",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/Resource",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                      "aws:cdk:cloudformation:props": {
+                                        "apiKeyRequired": true,
+                                        "authorizationType": "NONE",
+                                        "httpMethod": "GET",
+                                        "integration": {
+                                          "type": "AWS_PROXY",
+                                          "uri": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                                {
+                                                  "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+                                                },
+                                                "/invocations"
+                                              ]
+                                            ]
+                                          },
+                                          "integrationHttpMethod": "POST"
+                                        },
+                                        "resourceId": {
+                                          "Ref": "APIGatewayv1getcurrentscore533829A3"
+                                        },
+                                        "restApiId": {
+                                          "Ref": "APIGateway71B6BBE0"
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                      "version": "2.147.2"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                                  "version": "2.147.2"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                              "version": "2.147.2"
+                            }
+                          },
+                          "get-all-scores": {
+                            "id": "get-all-scores",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                                  "aws:cdk:cloudformation:props": {
+                                    "parentId": {
+                                      "Ref": "APIGatewayv1FC7408DC"
+                                    },
+                                    "pathPart": "get-all-scores",
+                                    "restApiId": {
+                                      "Ref": "APIGateway71B6BBE0"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                                  "version": "2.147.2"
+                                }
+                              },
+                              "GET": {
+                                "id": "GET",
+                                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET",
+                                "children": {
+                                  "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores": {
+                                    "id": "ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/",
+                                              {
+                                                "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+                                              },
+                                              "/GET/v1/get-all-scores"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores": {
+                                    "id": "ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                      "aws:cdk:cloudformation:props": {
+                                        "action": "lambda:InvokeFunction",
+                                        "functionName": {
+                                          "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+                                        },
+                                        "principal": "apigateway.amazonaws.com",
+                                        "sourceArn": {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              "arn:",
+                                              {
+                                                "Ref": "AWS::Partition"
+                                              },
+                                              ":execute-api:us-east-1:000000000000:",
+                                              {
+                                                "Ref": "APIGateway71B6BBE0"
+                                              },
+                                              "/test-invoke-stage/GET/v1/get-all-scores"
+                                            ]
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                      "version": "2.147.2"
+                                    }
+                                  },
+                                  "Resource": {
+                                    "id": "Resource",
+                                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/Resource",
+                                    "attributes": {
+                                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                      "aws:cdk:cloudformation:props": {
+                                        "apiKeyRequired": true,
+                                        "authorizationType": "NONE",
+                                        "httpMethod": "GET",
+                                        "integration": {
+                                          "type": "AWS_PROXY",
+                                          "uri": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                                {
+                                                  "Fn::ImportValue": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+                                                },
+                                                "/invocations"
+                                              ]
+                                            ]
+                                          },
+                                          "integrationHttpMethod": "POST"
+                                        },
+                                        "resourceId": {
+                                          "Ref": "APIGatewayv1getallscores92A29796"
+                                        },
+                                        "restApiId": {
+                                          "Ref": "APIGateway71B6BBE0"
+                                        }
+                                      }
+                                    },
+                                    "constructInfo": {
+                                      "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                      "version": "2.147.2"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                                  "version": "2.147.2"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                          "version": "2.147.2"
+                        }
+                      },
+                      "OPTIONS": {
+                        "id": "OPTIONS",
+                        "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/OPTIONS",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/OPTIONS/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "apiKeyRequired": false,
+                                "authorizationType": "NONE",
+                                "httpMethod": "OPTIONS",
+                                "integration": {
+                                  "type": "MOCK",
+                                  "requestTemplates": {
+                                    "application/json": "{ statusCode: 200 }"
+                                  },
+                                  "integrationResponses": [
+                                    {
+                                      "statusCode": "204",
+                                      "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                                        "method.response.header.Access-Control-Allow-Origin": "'*'",
+                                        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+                                      }
+                                    }
+                                  ]
+                                },
+                                "methodResponses": [
+                                  {
+                                    "statusCode": "204",
+                                    "responseParameters": {
+                                      "method.response.header.Access-Control-Allow-Headers": true,
+                                      "method.response.header.Access-Control-Allow-Origin": true,
+                                      "method.response.header.Access-Control-Allow-Methods": true
+                                    }
+                                  }
+                                ],
+                                "resourceId": {
+                                  "Fn::GetAtt": [
+                                    "APIGateway71B6BBE0",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "restApiId": {
+                                  "Ref": "APIGateway71B6BBE0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.147.2"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.147.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.ResourceBase",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.RestApi",
+                  "version": "2.147.2"
+                }
+              },
+              "ApiKey": {
+                "id": "ApiKey",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/ApiKey",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/ApiKey/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::ApiKey",
+                      "aws:cdk:cloudformation:props": {
+                        "enabled": true
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnApiKey",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.ApiKey",
+                  "version": "2.147.2"
+                }
+              },
+              "UsagePlan": {
+                "id": "UsagePlan",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::UsagePlan",
+                      "aws:cdk:cloudformation:props": {
+                        "apiStages": [
+                          {
+                            "apiId": {
+                              "Ref": "APIGateway71B6BBE0"
+                            },
+                            "stage": {
+                              "Ref": "APIGatewayDeploymentStageprod9BCCD7C3"
+                            },
+                            "throttle": {}
+                          }
+                        ],
+                        "usagePlanName": "Usage Plan"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnUsagePlan",
+                      "version": "2.147.2"
+                    }
+                  },
+                  "UsagePlanKeyResource": {
+                    "id": "UsagePlanKeyResource",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/UsagePlanKeyResource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::UsagePlanKey",
+                      "aws:cdk:cloudformation:props": {
+                        "keyId": {
+                          "Ref": "ApiKeyF9DDEE66"
+                        },
+                        "keyType": "API_KEY",
+                        "usagePlanId": {
+                          "Ref": "UsagePlanC18B28F1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnUsagePlanKey",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.UsagePlan",
+                  "version": "2.147.2"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.147.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "BootstrapVersion": {
+                "id": "BootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/BootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnParameter",
+                  "version": "2.147.2"
+                }
+              },
+              "CheckBootstrapVersion": {
+                "id": "CheckBootstrapVersion",
+                "path": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CheckBootstrapVersion",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnRule",
+                  "version": "2.147.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Stack",
+              "version": "2.147.2"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "serverless-api-service-stack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "serverless-api-service-stack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.147.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "serverless-api-service-stack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.147.2"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "serverless-api-service-stack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.147.2"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.147.2"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.147.2"
+    }
+  }
+}

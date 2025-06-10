@@ -1,0 +1,473 @@
+{
+ "Resources": {
+  "GenerateGameLambdaServiceRole30FF3608": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/Resource"
+   }
+  },
+  "GenerateGameLambdaServiceRoleDefaultPolicyCF49D8D7": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+        },
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "GenerateGameLambdaServiceRoleDefaultPolicyCF49D8D7",
+    "Roles": [
+     {
+      "Ref": "GenerateGameLambdaServiceRole30FF3608"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "GenerateGameLambdaB5A48AB4": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "d97e6dc64eb512e8169fb96a1a6b829bac7a3cd47f49d84524bf19545e6c7c5d.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "GenerateGameLambdaServiceRole30FF3608",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x"
+   },
+   "DependsOn": [
+    "GenerateGameLambdaServiceRoleDefaultPolicyCF49D8D7",
+    "GenerateGameLambdaServiceRole30FF3608"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Resource",
+    "aws:asset:path": "asset.d97e6dc64eb512e8169fb96a1a6b829bac7a3cd47f49d84524bf19545e6c7c5d",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "ValidateWordLambdaServiceRole0615BF92": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/Resource"
+   }
+  },
+  "ValidateWordLambdaServiceRoleDefaultPolicyBBAB304E": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+        },
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "ValidateWordLambdaServiceRoleDefaultPolicyBBAB304E",
+    "Roles": [
+     {
+      "Ref": "ValidateWordLambdaServiceRole0615BF92"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "ValidateWordLambda786BB569": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "b6de3cccba5263aa24b273878e34dfd2c1b44d9780df93343e43e71612a88580.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "ValidateWordLambdaServiceRole0615BF92",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x"
+   },
+   "DependsOn": [
+    "ValidateWordLambdaServiceRoleDefaultPolicyBBAB304E",
+    "ValidateWordLambdaServiceRole0615BF92"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Resource",
+    "aws:asset:path": "asset.b6de3cccba5263aa24b273878e34dfd2c1b44d9780df93343e43e71612a88580",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "GetCurrentScoreLambdaServiceRole1EB05148": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/Resource"
+   }
+  },
+  "GetCurrentScoreLambdaServiceRoleDefaultPolicy1D110C92": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+        },
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "GetCurrentScoreLambdaServiceRoleDefaultPolicy1D110C92",
+    "Roles": [
+     {
+      "Ref": "GetCurrentScoreLambdaServiceRole1EB05148"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "GetCurrentScoreLambdaAD50EAD6": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "1e7c3890fb06044dbac974b80a2617665ec1c6e970065b7192206a9c75fcab0f.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "GetCurrentScoreLambdaServiceRole1EB05148",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x"
+   },
+   "DependsOn": [
+    "GetCurrentScoreLambdaServiceRoleDefaultPolicy1D110C92",
+    "GetCurrentScoreLambdaServiceRole1EB05148"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Resource",
+    "aws:asset:path": "asset.1e7c3890fb06044dbac974b80a2617665ec1c6e970065b7192206a9c75fcab0f",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "GetAllScoresLambdaServiceRole5E66F1F7": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/Resource"
+   }
+  },
+  "GetAllScoresLambdaServiceRoleDefaultPolicyA90E4576": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "dynamodb:*",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+        },
+        {
+         "Fn::ImportValue": "serverlessapiservicestack5F195CDD:ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+        },
+        {
+         "Ref": "AWS::NoValue"
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "GetAllScoresLambdaServiceRoleDefaultPolicyA90E4576",
+    "Roles": [
+     {
+      "Ref": "GetAllScoresLambdaServiceRole5E66F1F7"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "GetAllScoresLambda50102433": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
+     "S3Key": "27312d2739da8dc105db0cab5b1727546d5f5c68a7c9b3b5ff8dc43e01a166e5.zip"
+    },
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "GetAllScoresLambdaServiceRole5E66F1F7",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x"
+   },
+   "DependsOn": [
+    "GetAllScoresLambdaServiceRoleDefaultPolicyA90E4576",
+    "GetAllScoresLambdaServiceRole5E66F1F7"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Resource",
+    "aws:asset:path": "asset.27312d2739da8dc105db0cab5b1727546d5f5c68a7c9b3b5ff8dc43e01a166e5",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWO3Q6CMAyFn8X7UhVMjJdi4qUx+ABkjErKz5bQTWMI7+4YevX19Of0pLg/HDHdqLckuu6SniucHk7pDkKrnHo1VLUqja2pFbxFXL3Rjq0BVgNOhe0JLk8Tebc9688i12oGyUolQk7wvCBozL3uyOVKCFZ7DPt/0xkKEutHTRAPQpaGTRM//AYzLHGwle0rzfCEu00rzMnojeOBsFj5BaIMRjTaAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "serverless-api-service-stack/serverless-api-service-stack-functions-stack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11": {
+   "Value": {
+    "Fn::GetAtt": [
+     "GenerateGameLambdaB5A48AB4",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+   }
+  },
+  "ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ValidateWordLambda786BB569",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+   }
+  },
+  "ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD": {
+   "Value": {
+    "Fn::GetAtt": [
+     "GetCurrentScoreLambdaAD50EAD6",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+   }
+  },
+  "ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62": {
+   "Value": {
+    "Fn::GetAtt": [
+     "GetAllScoresLambda50102433",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8:ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

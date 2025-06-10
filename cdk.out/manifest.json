@@ -1,0 +1,527 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "serverlessapiservicestack5F195CDD.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "serverlessapiservicestack5F195CDD.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "serverlessapiservicestack5F195CDD": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://000000000000/us-east-1",
+      "properties": {
+        "templateFile": "serverlessapiservicestack5F195CDD.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-deploy-role-000000000000-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/97515d047290a258f0cc7deae16528dcf2f9053a6a8721f386a536e6cfc67571.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "serverlessapiservicestack5F195CDD.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-lookup-role-000000000000-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "serverlessapiservicestack5F195CDD.assets"
+      ],
+      "metadata": {
+        "/serverless-api-service-stack/serverless-api-service-stack/GamesTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "GamesTableB32AB610"
+            }
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/GamesTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GamesTableB32AB610"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/UsersTable": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "UsersTable9725E9C8"
+            }
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/UsersTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsersTable9725E9C8"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/Exports/Output{\"Fn::GetAtt\":[\"GamesTableB32AB610\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttGamesTableB32AB610Arn3ABA396D"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/Exports/Output{\"Fn::GetAtt\":[\"UsersTable9725E9C8\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttUsersTable9725E9C8Arn5684EF99"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "serverless-api-service-stack/serverless-api-service-stack"
+    },
+    "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://000000000000/us-east-1",
+      "properties": {
+        "templateFile": "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-deploy-role-000000000000-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/1e655d4a07804aea6e891284fc82705db9ca7e27a2d794bd12c0c2dca1908a65.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-lookup-role-000000000000-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "serverlessapiservicestack5F195CDD",
+        "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8.assets"
+      ],
+      "metadata": {
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GenerateGameLambdaServiceRole30FF3608"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GenerateGameLambdaServiceRoleDefaultPolicyCF49D8D7"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GenerateGameLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GenerateGameLambdaB5A48AB4"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateWordLambdaServiceRole0615BF92"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateWordLambdaServiceRoleDefaultPolicyBBAB304E"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/ValidateWordLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ValidateWordLambda786BB569"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetCurrentScoreLambdaServiceRole1EB05148"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetCurrentScoreLambdaServiceRoleDefaultPolicy1D110C92"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetCurrentScoreLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetCurrentScoreLambdaAD50EAD6"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAllScoresLambdaServiceRole5E66F1F7"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAllScoresLambdaServiceRoleDefaultPolicyA90E4576"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/GetAllScoresLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAllScoresLambda50102433"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GenerateGameLambdaB5A48AB4\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttGenerateGameLambdaB5A48AB4ArnAE665E11"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"ValidateWordLambda786BB569\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttValidateWordLambda786BB569Arn6CD31A69"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GetCurrentScoreLambdaAD50EAD6\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttGetCurrentScoreLambdaAD50EAD6ArnB58151AD"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/Exports/Output{\"Fn::GetAtt\":[\"GetAllScoresLambda50102433\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttGetAllScoresLambda50102433Arn144CBB62"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-functions-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "serverless-api-service-stack/serverless-api-service-stack-functions-stack"
+    },
+    "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://000000000000/us-east-1",
+      "properties": {
+        "templateFile": "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-deploy-role-000000000000-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/9365b3de2eb93b2266696acea3757109f4a6eeebd0dd6c7a97607cce2a498011.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-lookup-role-000000000000-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "serverlessapiservicestackserverlessapiservicestackfunctionsstack720F50F8",
+        "serverlessapiservicestackserverlessapiservicestackrestapistack29E768F5.assets"
+      ],
+      "metadata": {
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGateway71B6BBE0"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayCloudWatchRole4835D6D9"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayAccount871F0E99"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayDeploymentF0E5ED0A22f1d70e46aef0d6136db1b7e6f5411f"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayDeploymentStageprod9BCCD7C3"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayEndpoint038C57B1"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1FC7408DC"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1generategameCBDFF340"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1generategamePOSTApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1generategame7143378D"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.generate-game": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1generategamePOSTApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1generategame6780A359"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/generate-game/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1generategamePOSTA7F3AC01"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1validateword2B9B2E9A"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1validatewordPOSTApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1validatewordBD124F7C"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.POST..v1.validate-word": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1validatewordPOSTApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BPOSTv1validateword802D83DB"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/validate-word/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1validatewordPOST68D0A3DA"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getcurrentscore533829A3"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getcurrentscoreGETApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getcurrentscore4E6BA8EE"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-current-score": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getcurrentscoreGETApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getcurrentscoreDEF02728"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-current-score/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getcurrentscoreGET31E7766D"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getallscores92A29796"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getallscoresGETApiPermissionserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getallscores2D270569"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/ApiPermission.Test.serverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37B.GET..v1.get-all-scores": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getallscoresGETApiPermissionTestserverlessapiservicestackserverlessapiservicestackrestapistackAPIGatewayE27BE37BGETv1getallscores0B8BB191"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/v1/get-all-scores/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayv1getallscoresGET6E19BDCD"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/APIGateway/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "APIGatewayOPTIONSBC809E56"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/ApiKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiKeyF9DDEE66"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsagePlanC18B28F1"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/UsagePlan/UsagePlanKeyResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UsagePlanUsagePlanKeyResourceFB108041"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/serverless-api-service-stack/serverless-api-service-stack-rest-api-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "serverless-api-service-stack/serverless-api-service-stack-rest-api-stack"
+    },
+    "serverless-api-service-stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "serverless-api-service-stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "serverless-api-service-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://000000000000/us-east-1",
+      "properties": {
+        "templateFile": "serverless-api-service-stack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-deploy-role-000000000000-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/df8ea0ef986e586b3160ac199abe7e94a7a8d7639de5aafd0ae41579d4aa79b8.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "serverless-api-service-stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-lookup-role-000000000000-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "serverless-api-service-stack.assets"
+      ],
+      "metadata": {
+        "/serverless-api-service-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/serverless-api-service-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/serverless-api-service-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "serverless-api-service-stack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
