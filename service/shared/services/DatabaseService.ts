@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { DsqlSigner } from "@aws-sdk/dsql-signer";
-import { Game } from "./Game";
+import { Game } from "../models/Game";
 
 export class DatabaseService {
     private static dataSource: DataSource;
@@ -19,7 +19,6 @@ export class DatabaseService {
         if (!DatabaseService.dataSource) {
             const host = process.env.DSQL_ENDPOINT || '';
 
-            // First try to connect to postgres database to create our database if needed
             DatabaseService.dataSource = new DataSource({
                 type: "postgres",
                 host: host,

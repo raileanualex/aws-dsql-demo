@@ -1,12 +1,10 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from "aws-lambda";
-import { DatabaseService } from "./DatabaseService";
-import { generateRandomGame } from "./GameGenerator";
+import { DatabaseService } from "../shared/services/DatabaseService";
+import { generateRandomGame } from "../shared/utils/GameGenerator";
 
 
 export async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
-    console.log("BEFORE_INIT:", event);
     await DatabaseService.initialize();
-    console.log("AFTER_INIT", context);
 
     try {
         // Generate a random game
