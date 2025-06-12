@@ -2,6 +2,8 @@
 
 This repository demonstrates how to build a serverless application using Amazon DSQL (Database Service Query Language) with AWS CDK, TypeScript, and TypeORM. The demo includes a simple game generator API that showcases the integration between Lambda functions and DSQL.
 
+Walkthrough Article: https://dev.to/aws-builders/working-with-aws-dsql-and-lambda-first-part-setup-of-the-project-209m
+
 ## 🚀 Features
 
 - Serverless architecture using AWS Lambda and API Gateway
